@@ -10,6 +10,10 @@ class ProductViewSet(viewsets.ModelViewSet):
     
 class ArtistViewSet(viewsets.ModelViewSet):
     queryset = Artist.objects.all()
-    serializer_class = ArtistSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    
+    def get_serializer_class(self):
+        if self.action == 'retrieve': # for /artists/<pk>/
+            return ArtistSerializer
+        return ArtistSimpleSerializer
     

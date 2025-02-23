@@ -1,7 +1,16 @@
 from rest_framework import serializers
 from .models import Artist, Product
 
+class ArtistSimpleSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model = Artist
+        fields = ['id', 'name', 'profile']
+
 class ProductSerializer(serializers.ModelSerializer):
+    
+    artist = ArtistSimpleSerializer(read_only=True)
+    
     class Meta:
         model = Product
         fields = [
@@ -34,8 +43,3 @@ class ArtistSerializer(serializers.ModelSerializer):
             'created_at',
         ]
         
-class ArtistSimpleSerializer(serializers.ModelSerializer):
-    
-    class Meta:
-        model = Artist
-        fields = ['id', 'name', 'profile']

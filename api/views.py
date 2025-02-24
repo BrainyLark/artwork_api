@@ -15,5 +15,6 @@ class ArtistViewSet(viewsets.ModelViewSet):
     def get_serializer_class(self):
         if self.action == 'retrieve': # for /artists/<pk>/
             return ArtistSerializer
+        
         return ArtistSimpleSerializer
     

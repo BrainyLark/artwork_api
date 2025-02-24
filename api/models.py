@@ -3,21 +3,21 @@ from django.core.validators import MinValueValidator
 
 # Create your models here.
 class ArtCategory(models.TextChoices):
-    PAINTING = 'PAINTING', 'Painting'
-    SCULPTURE = 'SCULPTURE', 'Sculpture'
-    PHOTOGRAPHY = 'PHOTOGRAPHY', 'Photography'
-    DIGITAL = 'DIGITAL', 'Digital Art'
-    MIXED = 'MIXED', 'Mixed Media'
-    OTHER = 'OTHER', 'Other'
+    PAINTING = 'УРАН ЗУРАГ', 'Уран зураг'
+    SCULPTURE = 'УРАН БАРИМАЛ', 'Уран баримал'
+    PHOTOGRAPHY = 'ФОТО ЗУРАГ', 'Фото зураг'
+    DIGITAL = 'ДИЖИТАЛ УРАН БҮТЭЭЛ', 'Дижитал уран бүтээл'
+    MIXED = 'ХОЛИМОГ БҮТЭЭЛ', 'Холимог уран бүтээл'
+    OTHER = 'БУСАД', 'Бусад'
     
 class ArtTechnique(models.TextChoices):
-    OIL = 'OIL', 'Oil'
-    ACRYLIC = 'ACRYLIC', 'Acrylic'
-    WATERCOLOR = 'WATERCOLOR', 'Watercolor'
-    PENCIL = 'PENCIL', 'Pencil'
-    DIGITAL = 'DIGITAL', 'Digital'
-    MIXED = 'MIXED', 'Mixed Media'
-    OTHER = 'OTHER', 'Other'
+    OIL = 'ЗОТОН ТОС', 'Зотон тос'
+    ACRYLIC = 'ЗОТОН АКРИЛИК', 'Зотон акрилик'
+    WATERCOLOR = 'УСАН БУДАГ ЦААС', 'Усан будаг цаас'
+    PENCIL = 'ХАРАНДААН ТЕХНИК', 'Харандаа'
+    DIGITAL = 'ДИЖИТАЛ ТЕХНИК', 'Дижитал техник'
+    MIXED = 'ХОЛИМОГ ТЕХНИК', 'Холимог техник'
+    OTHER = 'БУСАД ТЕХНИК', 'Бусад техник'
     
 class Artist(models.Model):
     name = models.CharField(max_length=255)
